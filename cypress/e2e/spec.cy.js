@@ -1,10 +1,10 @@
-import { loginMethods } from "./loginpages/login.methods";
-console.log('loginMethods:', loginMethods);
+import { homeData } from "./pages/homepages/home.data";
+import { homeMethods } from "./pages/homepages/home.methods"; 
+
 describe('template spec', () => {
-  it('passes', { retries: 2 },  () => {
-    cy.visit('https://www.demoblaze.com/');
-    cy.get('a[data-target="#logInModal"]').click();
-    loginMethods.login('username', 'password');
+  it('passes', () => {
+    cy.visit('https://www.demoblaze.com/')
+    homeMethods.clickOnProductlink('Samsung galaxy s6');
     cy.wait(10000);
   });
 });
